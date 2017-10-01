@@ -8,7 +8,7 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
   switch (info.menuItemId) {
     case "wiki-search":
       var opentab = browser.tabs.create({
-        url: "https://wikipedia.org/w/index.php?search="+info.selectionText
+        url: "https://wikipedia.org/w/index.php?search="+info.selectionText.trim()
       });
       opentab.then(onError);
       break;
