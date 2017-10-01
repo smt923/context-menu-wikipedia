@@ -5,7 +5,7 @@ browser.contextMenus.create({
 });
 
 browser.contextMenus.onClicked.addListener((info, tab) => {
-  var searchtext = info.selectionText.trim();
+  var searchtext = info.selectionText.trim().replace(" ", "+");
   switch (info.menuItemId) {
     case "wiki-search":
       var opentab = browser.tabs.create({
